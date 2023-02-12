@@ -1,12 +1,14 @@
-package com.anaboru.springsecurity.controllers;
+package com.anaboru.springbootstrap.controllers;
 
-import com.anaboru.springsecurity.models.User;
-import com.anaboru.springsecurity.services.RoleService;
-import com.anaboru.springsecurity.services.UserService;
+import com.anaboru.springbootstrap.models.User;
+import com.anaboru.springbootstrap.services.RoleService;
+import com.anaboru.springbootstrap.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.security.Principal;
 
 @Controller
 public class AdminController {
@@ -27,48 +29,28 @@ public class AdminController {
     }
 
     @GetMapping("admin/")
-    public String allUsersPage(Model model) {
+    public String allUsersPage(Model model, Principal principal) {
         model.addAttribute("users", userService.findAll());
-
-        return "admin/panel";
-    }
-
-    @GetMapping("/admin/{id}")
-    public String specificUserPage(Model model, @PathVariable("id") Long id) {
-        model.addAttribute("user", userService.findById(id));
-
-        return "admin/profile";
-    }
-
-    @GetMapping("/admin/new")
-    public String userCreationPage(Model model) {
-        model.addAttribute("user", new User());
+        model.addAttribute("user", userService.findByUsername(principal.getName()));
+        model.addAttribute("newUser", new User());
         model.addAttribute("roles", roleService.getRoles());
-
-        return "admin/new";
+        return "admin/admin-page";
     }
 
     @PostMapping("admin/new")
-    public String userCreation(@ModelAttribute("user") User user) {
+    public String userCreation(@ModelAttribute("newUser") User user) {
         userService.save(user);
 
         return "redirect:/admin/";
     }
 
-    @DeleteMapping("admin/{id}")
+    @DeleteMapping("admin/{id}/delete")
     public String deleteUser(@PathVariable("id") Long id) {
         userService.remove(id);
 
         return "redirect:/admin/";
     }
 
-    @GetMapping("admin/{id}/edit")
-    public String updateUserPage(@PathVariable("id") Long id, Model model) {
-        model.addAttribute("user", userService.findById(id));
-        model.addAttribute("roles", roleService.getRoles());
-
-        return "admin/edit";
-    }
 
     @PatchMapping("admin/{id}/edit")
     public String updateUser(@ModelAttribute("user") User user, @PathVariable("id") Long id) {

@@ -1,4 +1,4 @@
-package com.anaboru.springsecurity.configurations;
+package com.anaboru.springbootstrap.configurations;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.AuthorityUtils;

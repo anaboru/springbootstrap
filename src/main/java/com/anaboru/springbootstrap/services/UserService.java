@@ -1,6 +1,6 @@
-package com.anaboru.springsecurity.services;
+package com.anaboru.springbootstrap.services;
 
-import com.anaboru.springsecurity.models.User;
+import com.anaboru.springbootstrap.models.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
 import java.util.List;

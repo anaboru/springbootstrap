@@ -1,13 +1,11 @@
-package com.anaboru.springsecurity;
+package com.anaboru.springbootstrap;
 
-import com.anaboru.springsecurity.models.Role;
-import com.anaboru.springsecurity.models.User;
-import com.anaboru.springsecurity.repositories.RoleRepository;
-import com.anaboru.springsecurity.services.RoleService;
-import com.anaboru.springsecurity.services.UserService;
+import com.anaboru.springbootstrap.models.Role;
+import com.anaboru.springbootstrap.models.User;
+import com.anaboru.springbootstrap.services.RoleService;
+import com.anaboru.springbootstrap.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Controller;
 
 import javax.annotation.PostConstruct;
 import javax.transaction.Transactional;

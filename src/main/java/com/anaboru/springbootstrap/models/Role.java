@@ -1,4 +1,4 @@
-package com.anaboru.springsecurity.models;
+package com.anaboru.springbootstrap.models;
 
 import org.springframework.security.core.GrantedAuthority;
 

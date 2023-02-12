@@ -1,4 +1,4 @@
-package com.anaboru.springsecurity.models;
+package com.anaboru.springbootstrap.models;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -81,6 +81,16 @@ public class User implements UserDetails {
 
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
+    }
+    public String getRolesToString() {
+        StringBuilder roleNames = new StringBuilder();
+        for (Role role : getRoles()) {
+            roleNames.append(role.getRole())
+                    .append(", ");
+        }
+        return roleNames.toString()
+                .replaceAll(", $", "")
+                .replaceAll("ROLE_", "");
     }
 
     @Override

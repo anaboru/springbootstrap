@@ -1,8 +1,8 @@
-package com.anaboru.springsecurity.controllers;
+package com.anaboru.springbootstrap.controllers;
 
 
-import com.anaboru.springsecurity.models.User;
-import com.anaboru.springsecurity.services.UserService;
+import com.anaboru.springbootstrap.models.User;
+import com.anaboru.springbootstrap.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -28,6 +28,6 @@ public class UserController {
         User user = userService.findByUsername(principal.getName());
         model.addAttribute("user", userService.findById(user.getId()
         ));
-        return "user/profile";
+        return "user/user-page";
     }
 }

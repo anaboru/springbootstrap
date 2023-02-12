@@ -1,6 +1,6 @@
-package com.anaboru.springsecurity.services;
+package com.anaboru.springbootstrap.services;
 
-import com.anaboru.springsecurity.models.Role;
+import com.anaboru.springbootstrap.models.Role;
 
 import java.util.List;
 

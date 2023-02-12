@@ -1,7 +1,7 @@
-package com.anaboru.springsecurity.services;
+package com.anaboru.springbootstrap.services;
 
-import com.anaboru.springsecurity.models.User;
-import com.anaboru.springsecurity.repositories.UserRepository;
+import com.anaboru.springbootstrap.models.User;
+import com.anaboru.springbootstrap.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

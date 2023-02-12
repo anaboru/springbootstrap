@@ -1,6 +1,6 @@
-package com.anaboru.springsecurity.repositories;
+package com.anaboru.springbootstrap.repositories;
 
-import com.anaboru.springsecurity.models.Role;
+import com.anaboru.springbootstrap.models.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

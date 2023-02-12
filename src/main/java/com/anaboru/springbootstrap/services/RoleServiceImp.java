@@ -1,7 +1,7 @@
-package com.anaboru.springsecurity.services;
+package com.anaboru.springbootstrap.services;
 
-import com.anaboru.springsecurity.models.Role;
-import com.anaboru.springsecurity.repositories.RoleRepository;
+import com.anaboru.springbootstrap.models.Role;
+import com.anaboru.springbootstrap.repositories.RoleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
